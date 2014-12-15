@@ -1,0 +1,36 @@
+import java.util.Scanner;
+import java.util.HashSet;
+
+public class sum {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int s = sc.nextInt();
+		int[] numbers = new int[n];
+		for(int i = 0; i < n; i ++) {
+			numbers[i] = sc.nextInt();
+		}
+		System.out.println(sum(numbers, s));
+	}
+
+	public static String sum(int[] a, int s) {
+		HashSet<Integer> set = new HashSet<Integer>();		
+		String output = "";
+
+		for(int i : a) {
+			set.add(i);
+		}
+
+		for(int i : a) {
+			if(set.contains(s-i)) {
+				output = i + ", " + (s-i);
+				break;
+			}
+		}
+
+		return output;
+	}
+}
+
+
+// [1,4,6,2,4,6,7,2,3,4]

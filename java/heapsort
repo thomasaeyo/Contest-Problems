@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class heap_sort {
+
+	public static void main(String[] args) {
+		// array a.
+		// a in a tree
+		// heapify. compare parent and children
+		// sort an array. send a[1] to a[n] and keep heapifying 
+		Scanner sc = new Scanner(System.in);
+		int[] a = sc.nextLine().split(' ');
+		System.out.println(a);
+	}
+	public static heapify(int[] a) {
+		for(int i = (a.length - 1) / 2; i >= 0; i--) {
+			if(a[i] < a[2i+1]) swap(a, i, 2i+1);
+			if(a[i] < a[2i]) swap(a, i, 2i);
+		}
+	}
+
+	public static swap(int[] a, i, j) {
+		int temp = a[i];
+		a[i] = a[j];
+		a[j] = temp;
+	}
+}
+
+				1
+			2		3
+		4	5		6	7
+	8	9 10 11	  12 13 14	15
+
+				0
+			1 		2
+		3	4		5	6
